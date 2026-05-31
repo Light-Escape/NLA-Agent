@@ -1,0 +1,14 @@
+{
+  "persist_dir": "memory_db",
+  "collection_name": "nla_memory",
+  "pending_collection_name": "nla_memory_pending",
+  "embedding_dim": 384,
+  "top_k_default": 5,
+  "dedup_similarity_threshold": 0.9,
+  "merge_similarity_threshold": 0.82,
+  "min_quality_score": 0.4,
+  "auto_write_mode": false,
+  "readonly_mode": false,
+  "min_recall_score": 0.08,
+  "recall_filters_default": {}
+}

@@ -1,0 +1,10 @@
+google-adk
+litellm
+python-dotenv
+numpy
+scipy
+matplotlib
+chromadb
+fastapi
+uvicorn
+python-multipart
