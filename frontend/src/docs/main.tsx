@@ -1,6 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 import "katex/dist/katex.min.css";
+import workbenchScreenshot from "../../docs/assets/nla-workbench.png";
 import "./styles.css";
 
 type Status = "已完成" | "进行中" | "待完善" | "规划中";
@@ -147,6 +148,8 @@ const projectTree = `NLA_Master/
   frontend/                 # React 前端工作台与说明网站
   NLA_AGENT_TEST_CASES.md   # 40 题能力评估文档`;
 
+const repositoryUrl = "https://github.com/Light-Escape/NLA-Agent.git";
+
 function App() {
   return (
     <div className="doc-layout">
@@ -188,6 +191,14 @@ function App() {
             <div>
               <dt>说明网站</dt>
               <dd>纯静态文档页，便于阶段汇报和持续维护</dd>
+            </div>
+            <div>
+              <dt>项目仓库</dt>
+              <dd>
+                <a className="repo-link" href={repositoryUrl} target="_blank" rel="noreferrer">
+                  GitHub: Light-Escape/NLA-Agent
+                </a>
+              </dd>
             </div>
           </dl>
         </header>
@@ -231,6 +242,10 @@ function App() {
             <li>当前 <Code>App.tsx</Code> 体量较大，后续重构应优先拆分组件与状态模型。</li>
             <li>工作台目标是让会话、文件、Workspace 数学对象和诊断信息保持一致。</li>
           </ul>
+          <figure className="screenshot-card">
+            <img src={workbenchScreenshot} alt="NLA Agent 前端工作台截图" />
+            <figcaption>前端工作台截图：左侧历史聊天，中间 Agent 输出与输入区，右侧 Workspace 数学对象面板。</figcaption>
+          </figure>
         </DocSection>
 
         <DocSection id="progress" title="阶段进展">

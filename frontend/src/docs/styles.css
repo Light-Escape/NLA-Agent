@@ -168,6 +168,15 @@ dd {
   font-weight: 600;
 }
 
+.repo-link {
+  color: #1d4ed8;
+  text-decoration: none;
+}
+
+.repo-link:hover {
+  text-decoration: underline;
+}
+
 pre {
   overflow: auto;
   border: 1px solid #e2e8f0;
@@ -263,6 +272,27 @@ code {
 .next-list {
   margin: 0;
   padding-left: 22px;
+}
+
+.screenshot-card {
+  overflow: hidden;
+  margin: 20px 0 0;
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+  background: #f8fafc;
+}
+
+.screenshot-card img {
+  display: block;
+  width: 100%;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.screenshot-card figcaption {
+  color: #64748b;
+  font-size: 13px;
+  line-height: 1.6;
+  padding: 12px 14px;
 }
 
 .progress-list {
