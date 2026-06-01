@@ -1,0 +1,329 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>NLA Agent 项目说明</title>
+    <style>
+      :root {
+        color: #1f2937;
+        background: #f6f8fb;
+        font-family: "Segoe UI", "PingFang SC", "Microsoft YaHei", sans-serif;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        background: #f6f8fb;
+      }
+
+      a {
+        color: #1d4ed8;
+        text-decoration: none;
+      }
+
+      a:hover {
+        text-decoration: underline;
+      }
+
+      .page {
+        width: min(980px, calc(100% - 32px));
+        margin: 0 auto;
+        padding: 44px 0 72px;
+      }
+
+      header,
+      section {
+        border: 1px solid #d8dee8;
+        border-radius: 14px;
+        background: #ffffff;
+        padding: 28px;
+      }
+
+      section {
+        margin-top: 18px;
+      }
+
+      .kicker {
+        margin: 0 0 10px;
+        color: #2563eb;
+        font-size: 12px;
+        font-weight: 700;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+      }
+
+      h1,
+      h2,
+      h3,
+      p {
+        margin-top: 0;
+      }
+
+      h1 {
+        margin-bottom: 14px;
+        color: #0f172a;
+        font-size: clamp(30px, 6vw, 44px);
+        line-height: 1.12;
+        letter-spacing: -0.04em;
+      }
+
+      h2 {
+        margin-bottom: 16px;
+        padding-bottom: 10px;
+        border-bottom: 1px solid #e2e8f0;
+        color: #0f172a;
+        font-size: 24px;
+      }
+
+      h3 {
+        margin-bottom: 8px;
+        color: #111827;
+        font-size: 16px;
+      }
+
+      p,
+      li,
+      dd {
+        color: #475569;
+        line-height: 1.75;
+      }
+
+      .summary-grid,
+      .card-grid {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 12px;
+      }
+
+      .summary-grid {
+        margin: 22px 0 0;
+      }
+
+      .summary-grid div,
+      .card,
+      .score-card {
+        border: 1px solid #e2e8f0;
+        border-radius: 10px;
+        background: #f8fafc;
+        padding: 14px;
+      }
+
+      dt {
+        color: #64748b;
+        font-size: 12px;
+        font-weight: 700;
+      }
+
+      dd {
+        margin: 4px 0 0;
+        color: #0f172a;
+        font-weight: 600;
+      }
+
+      code {
+        border: 1px solid #e2e8f0;
+        border-radius: 6px;
+        background: #f8fafc;
+        color: #1d4ed8;
+        font-family: "Cascadia Code", Consolas, monospace;
+        padding: 1px 5px;
+      }
+
+      pre {
+        overflow: auto;
+        border: 1px solid #e2e8f0;
+        border-radius: 10px;
+        background: #0f172a;
+        color: #e5e7eb;
+        line-height: 1.65;
+        padding: 16px;
+      }
+
+      pre code {
+        border: 0;
+        background: transparent;
+        color: inherit;
+        padding: 0;
+      }
+
+      .screenshot-card {
+        overflow: hidden;
+        margin: 20px 0 0;
+        border: 1px solid #e2e8f0;
+        border-radius: 12px;
+        background: #f8fafc;
+      }
+
+      .screenshot-card img {
+        display: block;
+        width: 100%;
+        border-bottom: 1px solid #e2e8f0;
+      }
+
+      .screenshot-card figcaption {
+        color: #64748b;
+        font-size: 13px;
+        line-height: 1.6;
+        padding: 12px 14px;
+      }
+
+      .score-card strong {
+        display: block;
+        color: #0f172a;
+        font-size: 32px;
+      }
+
+      @media (max-width: 720px) {
+        header,
+        section {
+          padding: 20px;
+        }
+
+        .summary-grid,
+        .card-grid {
+          grid-template-columns: 1fr;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <main class="page">
+      <header>
+        <p class="kicker">Numerical Linear Algebra Agent</p>
+        <h1>数值代数 Agent 项目说明</h1>
+        <p>
+          本项目是一个面向中文数值线性代数任务的 Agent 系统。它以 Google ADK 为编排层，结合
+          NumPy/SciPy、LAPACK/BLAS、稀疏矩阵工具、Workspace 状态管理和 React 前端工作台，用于辅助完成线性方程组、最小二乘、特征值、SVD、矩阵文件读取、大规模稀疏问题和数值稳定性分析等任务。
+        </p>
+        <dl class="summary-grid">
+          <div>
+            <dt>当前定位</dt>
+            <dd>科研/课程场景下的数值线性代数辅助 Agent</dd>
+          </div>
+          <div>
+            <dt>主要成果</dt>
+            <dd>后端工具链成型，前端工作台和说明网站已有可展示版本</dd>
+          </div>
+          <div>
+            <dt>评估材料</dt>
+            <dd>40 题能力测试全部记录 3/3，总分 120/120</dd>
+          </div>
+          <div>
+            <dt>项目仓库</dt>
+            <dd><a href="https://github.com/Light-Escape/NLA-Agent.git">GitHub: Light-Escape/NLA-Agent</a></dd>
+          </div>
+        </dl>
+      </header>
+
+      <section>
+        <h2>项目结构</h2>
+        <p>项目主体位于 <code>NLA_Master</code>，后端 Agent、数值计算工具、记忆模块、测试文档和前端工程都在该目录下。</p>
+        <pre><code>NLA_Master/
+  agent.py                  # ADK root_agent 组装与工具注册
+  policy.py                 # 任务路由、前提检查、算法选择
+  linalg_backend.py         # LAPACK/BLAS 后端封装
+  sparse_backend.py         # 稀疏矩阵求解与迭代算法
+  parsers.py                # CSC / Matrix Market 读取
+  workspace.py              # 会话级 Workspace 与句柄协议
+  upload_api.py             # 矩阵上传 API
+  memory/                   # 长期记忆模块
+  tests/                    # 后端单元测试
+  frontend/                 # React 前端工作台与说明网站</code></pre>
+      </section>
+
+      <section>
+        <h2>前端工作台现状</h2>
+        <p>
+          前端位于 <code>NLA_Master/frontend</code>，使用 Vite + React + TypeScript。当前主要页面是三栏工作台：左侧历史/文件，中间对话，右侧 Workspace。
+        </p>
+        <ul>
+          <li>已具备 Markdown、GFM、LaTeX/KaTeX 渲染能力。</li>
+          <li>已接入 ADK Web API 和矩阵上传 API 的前端调用层。</li>
+          <li>工作台目标是让会话、文件、Workspace 数学对象和诊断信息保持一致。</li>
+        </ul>
+        <figure class="screenshot-card">
+          <img src="../frontend/docs/assets/nla-workbench.png" alt="NLA Agent 前端工作台截图" />
+          <figcaption>前端工作台截图：左侧历史聊天，中间 Agent 输出与输入区，右侧 Workspace 数学对象面板。</figcaption>
+        </figure>
+      </section>
+
+      <section>
+        <h2>后端与 Agent 架构</h2>
+        <p>
+          后端采用单 <code>root_agent</code> 架构。LLM 负责理解用户意图和组织解释，实际数值计算由 Python 工具完成。Workspace 保存真实矩阵对象，避免把大矩阵直接放入模型上下文。
+        </p>
+        <div class="card-grid">
+          <article class="card">
+            <h3>Agent 编排</h3>
+            <p>Google ADK root_agent 入口，注册数值计算、Workspace、记忆、文件读取等工具。</p>
+          </article>
+          <article class="card">
+            <h3>数值后端</h3>
+            <p>封装 LAPACK/BLAS 能力，包括线性方程、最小二乘、GEMM 和通用 driver 调用。</p>
+          </article>
+          <article class="card">
+            <h3>稀疏计算</h3>
+            <p>基于 SciPy sparse 支持稀疏直接法、CG/GMRES 和部分特征值计算。</p>
+          </article>
+          <article class="card">
+            <h3>Workspace</h3>
+            <p>保存矩阵、向量、分解结果和诊断量，提供摘要、统计、结构和切片接口。</p>
+          </article>
+        </div>
+      </section>
+
+      <section>
+        <h2>阶段进展</h2>
+        <div class="card-grid">
+          <article class="card">
+            <h3>数值计算工具链</h3>
+            <p>线性方程、最小二乘、矩阵乘法、特征值、SVD、伪逆、矩阵函数、稀疏求解和迭代算法均已纳入能力测试范围。</p>
+          </article>
+          <article class="card">
+            <h3>文件与大矩阵处理</h3>
+            <p>CSC 文本、Matrix Market 对称格式、上传 URI 与 Workspace 句柄流程已可用于评测。</p>
+          </article>
+          <article class="card">
+            <h3>前端工作台与说明网站</h3>
+            <p>已具备 Vite + React 三栏交互工作台和独立静态汇报页，后续重点是组件拆分、会话隔离、对象卡片和诊断面板。</p>
+          </article>
+          <article class="card">
+            <h3>评测闭环</h3>
+            <p>40 题人工 benchmark 已全部记录 3/3，下一阶段需要把高价值用例固化为自动化回归。</p>
+          </article>
+        </div>
+      </section>
+
+      <section>
+        <h2>测试与评估</h2>
+        <div class="score-card">
+          <strong>40 / 40</strong>
+          <p>全部测试题已有 3/3 评分记录，总分 120/120。</p>
+        </div>
+        <p>
+          评测覆盖 MATLAB 替代、稀疏矩阵、交互策略、SVD、矩阵函数和大规模迭代算法等方向。后续重点是把人工 benchmark 中的关键用例迁移为自动化回归测试。
+        </p>
+      </section>
+
+      <section>
+        <h2>运行方式</h2>
+        <pre><code># 后端 Agent CLI
+adk run NLA_Master
+
+# ADK Web 服务
+adk web --port 8000
+
+# 矩阵上传 API
+uvicorn NLA_Master.upload_api:app --port 8001
+
+# 前端工作台与说明网站
+cd NLA_Master/frontend
+npm run dev</code></pre>
+      </section>
+    </main>
+  </body>
+</html>
